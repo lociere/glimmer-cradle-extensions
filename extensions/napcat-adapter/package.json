@@ -1,0 +1,25 @@
+{
+  "name": "@glimmer-cradle/extension-napcat-adapter",
+  "version": "0.2.0",
+  "private": false,
+  "files": ["dist", "config", "extension-manifest.yaml"],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "peerDependencies": {
+    "@glimmer-cradle/extension-sdk": "^0.1.0",
+    "@glimmer-cradle/protocol": "^0.1.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@glimmer-cradle/extension-sdk": "link:../../../glimmer-cradle/packages/extension-sdk",
+    "@glimmer-cradle/protocol": "link:../../../glimmer-cradle/protocol",
+    "@types/node": "^20.11.0",
+    "typescript": "^5.0.0",
+    "zod": "^3.23.0"
+  }
+}
+

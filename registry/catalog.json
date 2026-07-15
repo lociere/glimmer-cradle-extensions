@@ -1,0 +1,15 @@
+{
+  "$schema": "./catalog.schema.json",
+  "schema_version": 1,
+  "extensions": [
+    {
+      "id": "napcat-adapter",
+      "display_name": "NapCat Adapter",
+      "publisher": "glimmer-cradle",
+      "repository": "https://github.com/lociere/glimmer-cradle-extensions",
+      "manifest_path": "extensions/napcat-adapter/extension-manifest.yaml",
+      "latest_version": "0.2.0",
+      "channels": { "stable": "0.2.0" }
+    }
+  ]
+}

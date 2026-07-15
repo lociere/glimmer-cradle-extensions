@@ -1,0 +1,14 @@
+{
+  "name": "glimmer-cradle-extensions",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "typecheck": "pnpm -r --if-present typecheck",
+    "build": "pnpm -r --if-present build",
+    "validate": "node scripts/validate-registry.mjs && pnpm typecheck",
+    "install:local": "pnpm build && node scripts/install-local.mjs"
+  },
+  "devDependencies": {
+    "yaml": "^2.8.1"
+  }
+}
