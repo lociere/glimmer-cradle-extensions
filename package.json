@@ -2,13 +2,20 @@
   "name": "glimmer-cradle-extensions",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@11.13.0",
+  "engines": {
+    "node": ">=24.18.0 <25",
+    "pnpm": "11.13.0"
+  },
   "scripts": {
+    "link:local-sdk": "node scripts/link-local-sdk.mjs",
     "typecheck": "pnpm -r --if-present typecheck",
     "build": "pnpm -r --if-present build",
-    "validate": "node scripts/validate-registry.mjs && pnpm typecheck",
-    "install:local": "pnpm build && node scripts/install-local.mjs"
+    "test": "pnpm -r --if-present test",
+    "validate": "node scripts/validate-workspace.mjs && pnpm typecheck && pnpm test"
   },
   "devDependencies": {
-    "yaml": "^2.8.1"
+    "yaml": "^2.8.1",
+    "zod": "^3.23.0"
   }
 }
