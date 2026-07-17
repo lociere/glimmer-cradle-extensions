@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 import YAML from 'yaml';
-import { ExtensionManifestSchema } from '@glimmer-cradle/extension-sdk/manifest';
+import protocol from '@glimmer-cradle/protocol';
 
 const root = process.cwd();
 const extensionsRoot = path.join(root, 'extensions');
@@ -13,9 +13,11 @@ const entries = fs.readdirSync(extensionsRoot, { withFileTypes: true })
 
 for (const directory of entries) {
   const extensionRoot = path.join(extensionsRoot, directory);
-  const manifest = ExtensionManifestSchema.parse(
+  const result = protocol.validateExtensionManifest(
     YAML.parse(fs.readFileSync(path.join(extensionRoot, 'extension-manifest.yaml'), 'utf8')),
   );
+  if (!result.ok || !result.data) throw new Error(`${directory}: ${result.errors.join('; ')}`);
+  const manifest = result.data;
   const packageJson = JSON.parse(fs.readFileSync(path.join(extensionRoot, 'package.json'), 'utf8'));
   if (manifest.id !== directory) throw new Error(`${directory}: 目录名与 manifest.id 不一致。`);
   if (!manifest.id.startsWith('glimmer-cradle.')) throw new Error(`${directory}: 第一方扩展必须使用 glimmer-cradle.* ID。`);

@@ -1,0 +1,21 @@
+{
+  "schema": "glimmer-cradle.extension-registry",
+  "schema_version": 1,
+  "registry": {
+    "id": "registry.glimmer-cradle.org",
+    "name": "Glimmer Cradle Extension Registry",
+    "homepage": "https://github.com/lociere/glimmer-cradle-extensions/tree/main/registry"
+  },
+  "extensions": [
+    {
+      "id": "lociere.napcat-adapter",
+      "publisher": "lociere",
+      "ownership": "third_party",
+      "listing_status": "pending",
+      "publisher_verification": "unverified",
+      "security_status": "normal",
+      "repository": "https://github.com/lociere/glimmer-cradle-napcat-adapter",
+      "channels": {}
+    }
+  ]
+}
