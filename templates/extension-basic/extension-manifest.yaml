@@ -1,0 +1,68 @@
+id: glimmer-cradle.template-basic
+name: Template Basic
+version: 0.1.1
+publisher: glimmer-cradle
+license: GPL-3.0-only
+repository: https://github.com/lociere/glimmer-cradle-extensions
+homepage: https://github.com/lociere/glimmer-cradle-extensions/tree/main/templates/extension-basic
+description: First-party extension template for Glimmer Cradle authors
+products:
+  - desktop
+  - personal-server
+platforms:
+  - windows-x64
+  - linux-x64
+main: dist/index.js
+minAppVersion: 0.1.0
+tags:
+  - template
+  - first-party
+requires:
+  - runtime
+permissions:
+  - RUNTIME_PROJECTION_WRITE
+engines:
+  glimmerCradle: 0.1.0
+  extensionSdk: 0.1.1
+contributes:
+  glimmer.managementSurface:
+    - id: template-basic-status
+      title: Template Status
+      audience: user
+      kind: status
+      requirements:
+        products:
+          - desktop
+          - personal-server
+        platforms:
+          - windows-x64
+          - linux-x64
+        features:
+          - extensions
+  glimmer.setting:
+    - key: enabled
+      title: 启用模板扩展
+      type: boolean
+      default: true
+      requirements:
+        products:
+          - desktop
+          - personal-server
+        platforms:
+          - windows-x64
+          - linux-x64
+        features:
+          - extensions
+    - key: greeting
+      title: 诊断问候语
+      type: string
+      default: hello from template-basic
+      requirements:
+        products:
+          - desktop
+          - personal-server
+        platforms:
+          - windows-x64
+          - linux-x64
+        features:
+          - extensions

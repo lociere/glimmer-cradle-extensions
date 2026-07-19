@@ -1,5 +1,6 @@
 packages:
   - 'extensions/*'
+  - 'templates/*'
 
 autoInstallPeers: false
 strictPeerDependencies: false

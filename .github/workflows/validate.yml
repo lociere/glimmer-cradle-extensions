@@ -1,0 +1,28 @@
+name: validate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: lociere/glimmer-cradle
+          path: glimmer-cradle
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.18.0
+      - run: corepack enable
+      - run: pnpm install --frozen-lockfile
+        working-directory: glimmer-cradle
+      - run: pnpm build:extension-tooling
+        working-directory: glimmer-cradle
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm link:local-sdk ${{ github.workspace }}/glimmer-cradle
+      - run: pnpm validate

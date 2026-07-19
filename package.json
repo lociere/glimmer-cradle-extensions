@@ -10,16 +10,16 @@
   "scripts": {
     "link:local-sdk": "node scripts/link-local-sdk.mjs",
     "validate:extensions": "node scripts/validate-workspace.mjs",
+    "validate:templates": "node scripts/validate-templates.mjs",
     "validate:registry": "node scripts/validate-registry.mjs",
     "typecheck": "pnpm -r --if-present typecheck",
     "build": "pnpm -r --if-present build",
     "test": "pnpm -r --if-present test",
-    "validate": "pnpm validate:extensions && pnpm validate:registry && pnpm typecheck && pnpm test"
-  },
-  "peerDependencies": {
-    "@glimmer-cradle/protocol": "^0.1.0"
+    "validate": "pnpm validate:extensions && pnpm validate:templates && pnpm validate:registry && pnpm typecheck && pnpm test"
   },
   "devDependencies": {
+    "@types/node": "^24.13.3",
+    "typescript": "^6.0.2",
     "yaml": "^2.8.1",
     "zod": "^3.23.0"
   }
