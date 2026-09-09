@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 import YAML from 'yaml';
-import protocol from '@glimmer-cradle/protocol';
+import { validateExtensionManifest } from '@glimmer-cradle/extension-sdk/manifest';
 
 const root = process.cwd();
 const extensionsRoot = path.join(root, 'extensions');
@@ -16,7 +16,7 @@ const entries = fs.readdirSync(extensionsRoot, { withFileTypes: true })
 
 for (const directory of entries) {
   const extensionRoot = path.join(extensionsRoot, directory);
-  const result = protocol.validateExtensionManifest(
+  const result = validateExtensionManifest(
     YAML.parse(fs.readFileSync(path.join(extensionRoot, 'extension-manifest.yaml'), 'utf8')),
   );
   if (!result.ok || !result.data) throw new Error(`${directory}: ${result.errors.join('; ')}`);
@@ -29,8 +29,8 @@ for (const directory of entries) {
   if (packageJson.peerDependencies?.['@glimmer-cradle/extension-sdk'] !== versions.extensionSdk) {
     throw new Error(`${directory}: extension-sdk peer 必须精确锁定为 ${versions.extensionSdk}。`);
   }
-  if (packageJson.peerDependencies?.['@glimmer-cradle/protocol'] !== versions.protocol) {
-    throw new Error(`${directory}: protocol peer 必须精确锁定为 ${versions.protocol}。`);
+  if (packageJson.peerDependencies?.['@glimmer-cradle/protocol']) {
+    throw new Error(`${directory}: 不得依赖已删除的 @glimmer-cradle/protocol。`);
   }
   if (manifest.engines?.extensionSdk !== versions.extensionSdk) {
     throw new Error(`${directory}: manifest.engines.extensionSdk 必须精确锁定为 ${versions.extensionSdk}。`);

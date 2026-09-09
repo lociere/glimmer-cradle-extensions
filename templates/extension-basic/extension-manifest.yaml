@@ -10,8 +10,7 @@ products:
   - desktop
   - personal-server
 platforms:
-  - windows-x64
-  - linux-x64
+  - any
 main: dist/index.js
 minAppVersion: 0.1.0
 tags:
@@ -23,7 +22,7 @@ permissions:
   - RUNTIME_PROJECTION_WRITE
 engines:
   glimmerCradle: 0.1.0
-  extensionSdk: 0.1.1
+  extensionSdk: 0.1.8
 contributes:
   glimmer.managementSurface:
     - id: template-basic-status
@@ -35,8 +34,7 @@ contributes:
           - desktop
           - personal-server
         platforms:
-          - windows-x64
-          - linux-x64
+          - any
         features:
           - extensions
   glimmer.setting:
@@ -49,8 +47,7 @@ contributes:
           - desktop
           - personal-server
         platforms:
-          - windows-x64
-          - linux-x64
+          - any
         features:
           - extensions
     - key: greeting
@@ -62,7 +59,6 @@ contributes:
           - desktop
           - personal-server
         platforms:
-          - windows-x64
-          - linux-x64
+          - any
         features:
           - extensions

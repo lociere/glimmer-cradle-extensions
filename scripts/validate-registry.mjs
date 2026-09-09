@@ -1,10 +1,10 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
-import protocol from '@glimmer-cradle/protocol';
+import { validateExtensionRegistryCatalog } from '@glimmer-cradle/extension-sdk/distribution';
 
 const catalogPath = path.resolve(process.cwd(), 'registry', 'catalog.json');
-const result = protocol.validateExtensionRegistryCatalog(JSON.parse(await fs.readFile(catalogPath, 'utf8')));
+const result = validateExtensionRegistryCatalog(JSON.parse(await fs.readFile(catalogPath, 'utf8')));
 if (!result.ok || !result.data) {
   throw new Error(`Registry 契约校验失败: ${result.errors.join('; ')}`);
 }
