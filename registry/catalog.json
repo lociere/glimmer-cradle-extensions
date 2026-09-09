@@ -11,11 +11,13 @@
       "id": "lociere.napcat-adapter",
       "publisher": "lociere",
       "ownership": "third_party",
-      "listing_status": "pending",
-      "publisher_verification": "unverified",
+      "listing_status": "approved",
+      "publisher_verification": "verified",
       "security_status": "normal",
       "repository": "https://github.com/lociere/glimmer-cradle-napcat-adapter",
-      "channels": {}
+      "channels": {
+        "stable": "https://github.com/lociere/glimmer-cradle-napcat-adapter/releases/download/v0.1.0/release-manifest.json"
+      }
     }
   ]
 }
