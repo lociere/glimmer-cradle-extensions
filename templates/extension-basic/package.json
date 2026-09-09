@@ -1,6 +1,6 @@
 {
   "name": "@glimmer-cradle/template-basic",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "private": true,
   "description": "First-party Glimmer Cradle extension template.",
   "license": "GPL-3.0-only",
@@ -14,7 +14,7 @@
     "release:prepare": "pnpm typecheck && pnpm test && pnpm build && node scripts/build-release.mjs"
   },
   "peerDependencies": {
-    "@glimmer-cradle/extension-sdk": "0.1.8",
+    "@glimmer-cradle/extension-sdk": "0.1.0",
     "zod": "^3.23.0"
   },
   "devDependencies": {

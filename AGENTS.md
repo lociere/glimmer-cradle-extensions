@@ -5,6 +5,7 @@
 - 扩展只能依赖公开的 `@glimmer-cradle/extension-sdk` 和第三方库，不得引用主仓库内部路径；Contract Spine 只通过 SDK 的公开 edge 消费。
 - 每个扩展必须声明 publisher、许可证、源码仓库、平台、权限、贡献点、配置 Schema、生命周期和 readiness。
 - 每个 `extensions/<id>/` 都是独立 SemVer 发布单元，发布物安装到 `data/packages/extensions/<id>/<version>/`；Host 不从源码仓库运行。
+- 摇篮完整首版发布候选形成前，模板、第一方扩展和公开 SDK 依赖统一保持 `0.1.0`，不得按开发进度提前递增；后续版本只随通过门禁并获授权的完整发布原子更新。
 - `registry/catalog.json` 只维护发现、审核与信任索引，必须由 Extension SDK 基于 Contract Spine 的公开 validator 校验；不得复制 Extension Manifest、SBOM 或包格式。
 - Registry 只指向发布者的不可变 Release；第三方扩展源码与 `.gcex` 不进入本仓库。
 - 密钥、账号、token、第三方程序包、日志和本机状态不得进入 Git。
