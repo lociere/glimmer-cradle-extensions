@@ -1,6 +1,6 @@
 id: glimmer-cradle.template-basic
 name: Template Basic
-version: 0.1.0
+version: 0.2.0
 publisher: glimmer-cradle
 license: GPL-3.0-only
 repository: https://github.com/lociere/glimmer-cradle-extensions
@@ -12,7 +12,7 @@ products:
 platforms:
   - any
 main: dist/index.js
-minAppVersion: 0.1.0
+minAppVersion: 0.2.0
 tags:
   - template
   - first-party
@@ -21,8 +21,8 @@ requires:
 permissions:
   - RUNTIME_PROJECTION_WRITE
 engines:
-  glimmerCradle: 0.1.0
-  extensionSdk: 0.1.0
+  glimmerCradle: 0.2.0
+  extensionSdk: 0.2.0
 contributes:
   glimmer.managementSurface:
     - id: template-basic-status

@@ -16,7 +16,7 @@
       "security_status": "normal",
       "repository": "https://github.com/lociere/glimmer-cradle-napcat-adapter",
       "channels": {
-        "stable": "https://github.com/lociere/glimmer-cradle-napcat-adapter/releases/download/v0.1.0/release-manifest.json"
+        "stable": "https://github.com/lociere/glimmer-cradle-napcat-adapter/releases/download/v0.2.0/release-manifest.json"
       }
     }
   ]
