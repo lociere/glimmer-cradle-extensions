@@ -1,6 +1,6 @@
 {
   "name": "glimmer-cradle-extensions",
-  "version": "0.2.2",
+  "version": "0.2.4",
   "private": true,
   "packageManager": "pnpm@11.13.0",
   "engines": {
