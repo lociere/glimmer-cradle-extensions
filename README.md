@@ -16,7 +16,7 @@
 
 - `templates/extension-basic/` 是第一方扩展的最小作者模板，演示 package、manifest、配置 Schema、构建脚本、tag Release 与 `.gcex` 打包边界。
 - `tooling/public-package-versions.json` 是本仓库唯一的公开 SDK 版本事实源。模板、第一方扩展和 CI 都从这里读取精确版本，不再各自复制。
-- `@glimmer-cradle/extension-sdk` 在本仓库内精确锁定为当前发布线 `0.2.0`。版本只随通过门禁并获授权的完整发布原子更新；同步版本事实源后必须运行 `pnpm validate`。
+- `@glimmer-cradle/extension-sdk` 在本仓库内精确锁定为当前发布线 `0.2.1`。版本只随通过门禁并获授权的完整发布原子更新；同步版本事实源后必须运行 `pnpm validate`。
 - Contract Spine 的公开 Document 与进程契约由 SDK 的 manifest、distribution 和 host edge 消费；扩展及 Registry 工具不得直接依赖已删除的 `@glimmer-cradle/protocol`。
 - 在公开包正式发布前，本仓库与 CI 都通过 `link-local-sdk` 连接已构建的主仓 `contracts` 与 `packages/extension-sdk` 发布投影，而不是假设 npm registry 已可用。
 - 复制出的扩展模板不继承这条例外：正式 Release workflow 必须从 npm 安装精确 SDK，先确认公开版本可取得，再执行类型、测试、干净 tag、可复现打包、摘要与 provenance 门。
